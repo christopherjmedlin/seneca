@@ -6,6 +6,9 @@ public class Task {
   private String name;
   private boolean weekly;
 
+  @ManyToOne
+  private TodoList list;
+
   public Task() {}
 
   public Task(String name, boolean weekly) {
