@@ -2,18 +2,18 @@ package xyz.christophermedlin.seneca.entities;
 
 import jakarta.persistence.ManyToOne;
 
-public class TodoListItem {
+public class Task {
   private String name;
   private boolean weekly;
 
-  public TodoListItem() {}
+  public Task() {}
 
-  public TodoListItem(String name, boolean weekly) {
+  public Task(String name, boolean weekly) {
     this.name = name;
     this.weekly = weekly;
   }
 
-  public TodoListItem(String name) {
+  public Task(String name) {
     this.name = name;
   }
 

@@ -11,12 +11,12 @@ public class Done {
   private CheckIn checkIn;
 
   @ManyToOne
-  private TodoListItem task;
+  private Task task;
 
   @ManyToOne
   private Person doneByPerson;
 
-  public Done(Date doneOnDate, CheckIn checkIn, TodoListItem task, Person doneByPerson) {
+  public Done(Date doneOnDate, CheckIn checkIn, Task task, Person doneByPerson) {
     this.doneOnDate = doneOnDate;
     this.checkIn = checkIn;
     this.task = task;
@@ -41,11 +41,11 @@ public class Done {
     this.checkIn = checkIn;
   }
 
-  public TodoListItem getTask() {
+  public Task getTask() {
     return task;
   }
 
-  public void setTask(TodoListItem task) {
+  public void setTask(Task task) {
     this.task = task;
   }
 
