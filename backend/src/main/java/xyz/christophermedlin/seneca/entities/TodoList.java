@@ -2,9 +2,14 @@ package xyz.christophermedlin.seneca.entities;
 
 import java.sql.Date;
 
+import jakarta.persistence.ManyToOne;
+
 public class TodoList {
   private String name;
   private Date created;
+
+  @ManyToOne()
+  private User owner;
 
   public TodoList () {}
 
