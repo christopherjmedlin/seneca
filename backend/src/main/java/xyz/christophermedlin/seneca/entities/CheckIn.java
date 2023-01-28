@@ -3,7 +3,6 @@ package xyz.christophermedlin.seneca.entities;
 import java.util.Date;
 import java.util.Set;
 
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 
 public class CheckIn {
