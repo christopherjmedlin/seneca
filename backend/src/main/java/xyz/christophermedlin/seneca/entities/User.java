@@ -1,10 +1,12 @@
 package xyz.christophermedlin.seneca.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import java.util.Set;
 
+@Entity
 public class User {
   private @Id @GeneratedValue Long id;
   private String username;

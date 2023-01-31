@@ -1,7 +1,9 @@
 package xyz.christophermedlin.seneca.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Task {
   private String name;
   private boolean weekly;

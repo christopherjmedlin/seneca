@@ -3,9 +3,11 @@ package xyz.christophermedlin.seneca.entities;
 import java.sql.Date;
 import java.util.Set;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
+@Entity
 public class TodoList {
   private String name;
   private Date created;

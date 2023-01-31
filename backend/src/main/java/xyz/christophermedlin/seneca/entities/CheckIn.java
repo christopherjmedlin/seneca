@@ -3,8 +3,10 @@ package xyz.christophermedlin.seneca.entities;
 import java.util.Date;
 import java.util.Set;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
+@Entity
 public class CheckIn {
   private Date date;
 
