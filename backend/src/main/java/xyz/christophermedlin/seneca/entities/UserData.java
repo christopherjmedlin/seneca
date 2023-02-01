@@ -7,7 +7,7 @@ import jakarta.persistence.OneToMany;
 import java.util.Set;
 
 @Entity
-public class User {
+public class UserData {
   private @Id @GeneratedValue Long id;
   private String username;
   private String password; 
@@ -15,9 +15,9 @@ public class User {
   @OneToMany(mappedBy="owner")
   private Set<TodoList> lists;
   
-  public User() {}
+  public UserData() {}
 
-  public User(Long id, String username, String password) {
+  public UserData(Long id, String username, String password) {
     this.id = id;
     this.username = username;
     this.password = password;

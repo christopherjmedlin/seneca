@@ -18,5 +18,5 @@ public class Person {
   private TodoList list;
 
   @ManyToOne()
-  private User user;
+  private UserData user;
 }

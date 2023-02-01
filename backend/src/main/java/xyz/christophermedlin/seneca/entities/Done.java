@@ -3,10 +3,13 @@ package xyz.christophermedlin.seneca.entities;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Done {
+  private @Id @GeneratedValue Long id;
   private Date doneOnDate;
 
   @ManyToOne
