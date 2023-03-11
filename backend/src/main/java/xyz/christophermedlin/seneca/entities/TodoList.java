@@ -19,7 +19,7 @@ public class TodoList {
   private Set<Task> tasks;
 
   @ManyToOne()
-  private UserData owner;
+  private User owner;
 
   public TodoList () {}
 

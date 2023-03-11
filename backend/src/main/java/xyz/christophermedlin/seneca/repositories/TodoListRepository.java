@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import xyz.christophermedlin.seneca.entities.TodoList;
-import xyz.christophermedlin.seneca.entities.UserData;
+import xyz.christophermedlin.seneca.entities.User;
 
 @Repository
 public interface TodoListRepository extends JpaRepository<TodoList, Long> {
-  List<TodoList> findByOwner(UserData owner);
+  List<TodoList> findByOwner(User owner);
   List<TodoList> findByName(String name);
 }

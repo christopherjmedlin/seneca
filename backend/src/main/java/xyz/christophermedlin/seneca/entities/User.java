@@ -1,13 +1,16 @@
 package xyz.christophermedlin.seneca.entities;
 
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import java.util.Set;
+import jakarta.persistence.Table;
 
 @Entity
-public class UserData {
+@Table(name = "users")
+public class User {
   private @Id @GeneratedValue Long id;
   private String username;
   private String password; 
@@ -15,10 +18,9 @@ public class UserData {
   @OneToMany(mappedBy="owner")
   private Set<TodoList> lists;
   
-  public UserData() {}
+  public User() {}
 
-  public UserData(Long id, String username, String password) {
-    this.id = id;
+  public User(String username, String password) {
     this.username = username;
     this.password = password;
   }
