@@ -18,7 +18,7 @@ public class WebSecurityConfig {
     http.authorizeHttpRequests((requests) -> requests
       .anyRequest().authenticated()
     )
-    .formLogin();
+    .httpBasic();
     return http.build();
   }
 
