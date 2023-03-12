@@ -1,8 +1,10 @@
 package xyz.christophermedlin.seneca.controllers;
 
 import java.security.Principal;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +32,11 @@ public class TodoListController {
     list.setOwner(currentUser);
     listService.createList(list);
     return listService.getList(list.getId());
+  }
+
+  @GetMapping("")
+  public Set<TodoList> getLists(Principal principal) {
+    User user = userService.getUserWithPassword(principal.getName());
+    return user.getLists();
   }
 }
