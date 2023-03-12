@@ -33,7 +33,7 @@ public class Task {
     this.name = name;
   }
 
-  private boolean getWeekly() {
+  public boolean getWeekly() {
     return this.weekly;
   }
 }

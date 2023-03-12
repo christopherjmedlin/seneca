@@ -19,4 +19,14 @@ public class Person {
 
   @ManyToOne()
   private User user;
+
+  public Person(String name, TodoList list, User user) {
+    this.name = name;
+    this.list = list;
+    this.user = user;
+  }
+
+  public String getName() {
+    return name;
+  }
 }
