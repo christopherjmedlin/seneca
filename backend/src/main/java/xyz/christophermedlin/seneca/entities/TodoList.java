@@ -23,9 +23,13 @@ public class TodoList {
 
   public TodoList () {}
 
-  public TodoList(String name, Date created) {
+  public TodoList(String name, Set<Task> tasks) {
     this.name = name;
-    this.created = created;
+    this.tasks = tasks;
+  }
+
+  public Long getId() {
+    return this.id;
   }
 
   public String getName() {
@@ -42,5 +46,17 @@ public class TodoList {
 
   public void setCreated(Date created) {
     this.created = created;
+  }
+
+  public String getOwner() {
+    return this.owner.getUsername();
+  }
+
+  public void setOwner(User u) {
+    this.owner = u;
+  }
+
+  public Set<Task> getTasks() {
+    return this.tasks;
   }
 }

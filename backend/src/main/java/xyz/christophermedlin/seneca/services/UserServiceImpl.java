@@ -25,4 +25,9 @@ public class UserServiceImpl implements UserService {
   public UserView getUser(String username) {
     return userRepository.findByUsernameNoPassword(username);
   }
+
+  @Override
+  public User getUserWithPassword(String username) {
+    return userRepository.findByUsername(username);
+  }
 }
