@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import xyz.christophermedlin.seneca.entities.User;
 import xyz.christophermedlin.seneca.repositories.UserRepository;
+import xyz.christophermedlin.seneca.views.UserView;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,5 +19,10 @@ public class UserServiceImpl implements UserService {
     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     User u = new User(username, encoder.encode(password));
     userRepository.save(u);
+  }
+
+  @Override
+  public UserView getUser(String username) {
+    return userRepository.findByUsernameNoPassword(username);
   }
 }

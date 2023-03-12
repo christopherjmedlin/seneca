@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import xyz.christophermedlin.seneca.services.UserService;
+import xyz.christophermedlin.seneca.views.UserView;
 
 @RestController
 @RequestMapping("/users")
@@ -24,8 +25,8 @@ public class UserController {
   }
 
   @GetMapping("/me")
-  public String currentUser(Principal principal) {
-    return principal.getName();
+  public UserView currentUser(Principal principal) {
+    return service.getUser(principal.getName());
   }
 
   public static class LoginSubmission {
