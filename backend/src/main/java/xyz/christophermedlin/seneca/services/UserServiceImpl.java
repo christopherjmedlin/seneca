@@ -2,10 +2,12 @@ package xyz.christophermedlin.seneca.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import xyz.christophermedlin.seneca.entities.User;
 import xyz.christophermedlin.seneca.repositories.UserRepository;
 
+@Service
 public class UserServiceImpl implements UserService {
 
   @Autowired
