@@ -7,14 +7,14 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 })
 export class AuthenticationService {
 
-  private username: string;
-  private password: string;
-  private isAuthenticated: boolean;
+  private _username: string;
+  private _password: string;
+  private _isAuthenticated: boolean;
 
   constructor(private http: HttpClient) {
-    this.username = "";
-    this.password = "";
-    this.isAuthenticated = false;
+    this._username = "";
+    this._password = "";
+    this._isAuthenticated = false;
   }
 
   login(username: string, password: string) {
@@ -25,14 +25,26 @@ export class AuthenticationService {
     this.http.get('users/me',
       {headers: headers, observe: 'response'}).subscribe(response => {
       if (response.status == 200) {
-        this.username = username;
-        this.password = password;
-        this.isAuthenticated = true;
+        this._username = username;
+        this._password = password;
+        this._isAuthenticated = true;
       }
     })
   }
 
   logout() {
-    this.isAuthenticated = false;
+    this._isAuthenticated = false;
+  }
+
+  get username(): string {
+    return this.username;
+  }
+
+  get password(): string {
+    return this.password;
+  }
+
+  get isAuthenticated(): boolean {
+    return this.isAuthenticated;
   }
 }
